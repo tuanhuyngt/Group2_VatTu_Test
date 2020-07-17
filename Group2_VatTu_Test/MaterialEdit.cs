@@ -63,6 +63,15 @@ namespace Group2_VatTu_Test
             Assert.IsNotNull(str);
         }
 
+        [Test, Category("RightInputMaterialEdit"), Order(5)]
+        public void txtTenEditCheck()
+        {
+            txtTenVatTu.Clear();
+            txtTenVatTu.SendKeys("Edit");
+            str = txtTenVatTu.GetAttribute("value");
+            Assert.AreEqual("Edit", str);
+        }
+
         [Test, Category("RightInputMaterialEdit"), Order(6)]
         public void modalXacNhanCheck()
         {
@@ -78,7 +87,7 @@ namespace Group2_VatTu_Test
             ele = webDriver.FindElement(By.XPath("/html/body/app-root/ng-component/div/div/div[2]/app-material-edit/app-material-edit-group2/div/p-dialog/div/div[3]/p-footer/button[2]"));
             ele.Click();
         }
-        [Test, Category("RightInputMaterialEdit"), Order(8)]
+        /*[Test, Category("RightInputMaterialEdit"), Order(8)]
         public void confirmXacNhanCheck()
         {
             btnLuu.Click();
@@ -87,7 +96,7 @@ namespace Group2_VatTu_Test
             ele = webDriver.FindElement(By.ClassName("toast-message"));
             str = ele.Text;
             Assert.AreEqual("Chỉnh sửa vật tư thành công", str);
-        }
+        }*/
 
     }
 }

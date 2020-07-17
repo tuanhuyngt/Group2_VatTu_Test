@@ -20,7 +20,11 @@ namespace Group2_VatTu_Test
             ele = webDriver.FindElement(By.XPath("/html/body/app-root/ng-component/div/div/div[2]/app-material-management/app-material-management-group2/div/div[2]/form/div/input"));
             ele.SendKeys("Loa");
             ele.SendKeys(Keys.Enter);
-            Thread.Sleep(2000);
+            Thread.Sleep(300);
+            ele = webDriver.FindElement(By.XPath("/html/body/app-root/ng-component/div/div/div[2]/app-material-management/app-material-management-group2/div/div[3]/div/div/div/p-table/div/div/table/tbody/tr[1]/td[3]/span"));
+            str = ele.Text;
+            Assert.IsTrue(str.Contains("Loa"));
+            Thread.Sleep(600);
         }
 
 
@@ -32,7 +36,7 @@ namespace Group2_VatTu_Test
             ele.Click();
             ele = webDriver.FindElement(By.XPath("/html/body/app-root/ng-component/div/div/div[2]/app-material-add/app-material-add-group2/div/div[1]/div[2]/div/div/span[1]"));
             str = ele.Text;
-            Assert.AreEqual("Thêm vật tư", str);
+            Assert.AreEqual("Thêm vật tư", str);           
             webDriver.Navigate().Back();
             Thread.Sleep(300);
         }
